@@ -35,17 +35,50 @@ var student_answer = ["The cat sleeps in the house"]; //incorrect
 var student_answer = ["The god sleeps in the house"]; //incorrect
 var student_answer = ["The dog stteeps in the house"]; //correct with typo
 var student_answer = ["The dog sttteeps in the house"]; //incorrect
+////////////////////////////////////////////////////////////////////////////
+var correctness = ["True", "False"];
+var blame = ["None", "typo", "missing", "wrong_word"];
+var highlights = ["[]"];
+
+
+
+tuple = ["Correct", "Blame", "Highlights"];
+correct = if yes return true else false;
+
+
+
 
 function grade(correct_answer, student_answer){
   //Condition 1: Exact Match - Correct
-  if (condition 1 = exact match) {
-  return "Correct";
-  //Condition 2: 
-} else if (condition 2= ) {
-  return (result 2)
-  }  else if (condition 3) {
-  return (result 3)
-  } else (condition 4) {
-  return (result 4)
+  if (correct_answer == student_answer) {
+  return "(correctness[0], blame[0], highlights[0])";
+  //Condition 2: Exact Match but with Punctuation - Correct
+  } else if (correct_answer + "." || "!" || "?" == student_answer + "." || "!" || "?"){
+  return "(correctness[0], blame[0], highlights[0])";
+  //Condition 3: Exact Match but with different capitalization - Correct
+  }  else if (correct_answer.toLowerCase == student_answer.toLowerCase) {
+  return "(correctness[0], blame[0], highlights[0])";
+
+  ////////////////////////////////////////////////
+  //Typo
+  ///////
+
+  //Condition 4: Near Match because of Repeated Letter at any point in the sentence - Typo
+  } else if student_answer correct_answer  {
+  return "(correctness[0], blame[1], highlights[X])";
+
+  ////////////////////////////////////////////////
+  //Incorrect Answers
+  ///////
+
+  //Condition 5: No Match because of omitted letter - False
+} else if (correct_answer.split(" ") != student_answer.split(" ")) ){
+  return "(correctness[1], blame[2], highlights[X])";
+  //Condition 6: No Match because of wrong word - False
+  } else if student_answer correct_answer  {
+  return "(correctness[1], blame[1], highlights[X])";
+  //Condition 7: No Match because of omitted word - False
+} else if (correct_answer.split(" ").length != student_answer.split(" ").length)  {
+  return "(correctness[1], blame[0], highlights[0])";
   }
 };
