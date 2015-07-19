@@ -86,14 +86,26 @@ var student_answer = ["The dog sttteeps in the house"]; //incorrect
 //     msg = false;
 // }
 
-var correct = [true, false];
-var blame = ["None", "Typo", "Missing", "Wrong_word"];
-var highlights = ["[]"];
+// var correct = [true, false];
+// var blame = ["None", "Typo", "Missing", "Wrong_word"];
+// var highlights = ["[]"];
 
 function grade(correct_answer, student_answer){
+  var correct = [true, false];
+  var blame = ["None", "Typo", "Missing", "Wrong_word"];
+  var highlights = ["[]"];
+  var output; //For output info
+  var previous; //For previous letter
+  var secondWordDone =
+  //for Condition 4
+  var correct_answer_string = [];
+  var student_answer_string = [];
+  var correct_answer_place = [];
+  var student_answer_place = [];
+
   //Condition 1: Exact Match - Correct
   if (correct_answer == student_answer) {
-  return document.getElementById(correct[0], blame[0], highlights[0]);
+  return (correct[0], blame[0], highlights[0]);
   //Condition 2: Exact Match but with Punctuation - Correct
   } else if (correct_answer + "." || "!" || "?" == student_answer + "." || "!" || "?"){
   return (correct[0], blame[0], highlights[0]);
@@ -102,19 +114,85 @@ function grade(correct_answer, student_answer){
   return (correct[0], blame[0], highlights[0]);
 
   //Condition 4: Near Match because of Repeated Letter at any point in the sentence - Typo
-  } else if ( correct_answer.split(" ").search !== student_answer.split(" ").search(correct_answer.split(" ")).match ) {
-  ///indexOf, lastIndexOf  
+  } else if for (i = 0; i < correct_answer_string.length; i++) {
+      correct_answer_string = correct_answer.split(" ");
+      student_answer_string = student_answer.split(" ");
+      //Position Array for Correct Answer String and Debugging
+      for (var i = 0; i < correct_answer_string.length; i++) {
+        correct_answer_place[i] = correct_answer.search(correct_answer_string[i]);
+        console.log(correct_answer_string[i] + ", " + correct_answer_place[i]);
+      //Position Array for Student Answer String
+      } for (i = 0; i < student_answer_string.length; i++) {
+        student_answer_place[i] = student_answer.search(student_answer_string[i]);
+        console.log(student_answer_string[i] + ", " + student_answer_place[i]);
+      } for (var i = 0; i < correct_answer_string.length; i++){
+        for (var k = 0, j = 0; k < correct_answer_string[i].length && secondWordDone === 0; k++) {
+          console.log(correct_answer_string[i][k] + " " student_answer_string[i][j]);
+          //If equal
+          if (correct_answer_string[i][k] == student_answer_string[i][j]) {
+            console.log("1");
+            previous = correct_answer_string[i][k];
+            continue;
+          }
+          //If Not equal
+          else if (student_answer_string[i][j + 1] == previous) {
+            console.log("2");
+            blame = ", Typo";
+            output = "((" + correct_answer_place[i] + "," + correct_answer_string[i].length "), (" + student_answer_place[i] + "," + student_answer_string[i].length "))";
+            highlight = " [" + output + " ]";
+            previous = " ";
+          }
+          console.log("Done.");
+          return "(" + result + ", " + blame + ", " + highlight
+
+        }
+      }
+
+
+      // //For Debugging
+      // } for (i = 0; i < correct_answer_string.length; i++) {
+      //   correct_answer_place[i] = correct_answer.search(correct_answer_string[i]);
+      // //For Debugging
+      // } for (var i = 0; i < correct_answer_string.length; i++) {
+      //   correct_answer_place[i] = correct_answer.search(correct_answer_string[i]);
+
+
+
+
+
+      correct_answer_place && student_answer.split (" ") = student_answer_place;
+      correct_answer_place[i] = correct_answer.search(correct_answer_string[i]);
+      return (correct[0], blame[1], ( (correct_answer., correct_answer.), (student_answer.,student_answer.);
+
+
+
+
+
+
+  else if ( correct_answer.split(" ").search !== student_answer.split(" ").search(correct_answer.split(" ")).match ) {
+
+
+
+
+
+
+
+
+  ///indexOf, lastIndexOf
   student_answer.charAt( )
-  return (correct[0], blame[1], ( (correct_answer.charAt(' '), correct_answer.lastCharAt(' ')), (student_answer.charAt(' '),student_answer.lastCharAt(' ') );
+
 
   //Condition 5: No Match because of omitted letter - False
   } else if (correct_answer.split(" ") != student_answer.split(" ")) {
   return (correct[1], blame[2], highlights[X];
+
   //Condition 6: No Match because of wrong word - False
-  } else if student_answer correct_answer  {
+  } else if correct_answer.split(" ").search !== student_answer.split(" ").search.match(correct_answer.split(" ")) {
+  for (i = 0; i < correct_answer.length; i++);
   return (correct[1], blame[1], highlights[X]);
+
   //Condition 7: No Match because of omitted word - False
-  } else if (correct_answer.split(" ").length != student_answer.split(" ").length)  {
+  } else (correct_answer.split(" ").length != student_answer.split(" ").length)  {
   return (correct[1], blame[0], highlights[0]);
   }
 };
