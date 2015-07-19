@@ -60,20 +60,31 @@ var student_answer = ["The dog sttteeps in the house"]; //incorrect
 // ];
 
 // var correct = [
-//   if (var blame == blame[0] || var blame == blame[1]) {
-//     document.correct(true);
+//   if ((var blame == blame[0]) || (var blame == blame[1])) {
+//     correct = true;
 //   } else {
-//     document.correct(false);
+//   correct= false;
 //   }
 // ];
+// var correct_answer = document.getElementById('correct')
 
-// var correct {
-//   if (blame[0] || blame[1]) {
+// function correct {
+//   if (var blame == blame[0]) || (var blame = blame[1]) {
 //     document.correct(true);
 //   } else {
 //     document.correct(false);
 //   }
 // };
+// switch(level) {
+//   case blame[0]:
+//     msg = true;
+//   case blame[1]:
+//     msg = true;
+//   case blame[2]:
+//     msg = false;
+//   case blame[3]:
+//     msg = false;
+// }
 
 var correct = [true, false];
 var blame = ["None", "Typo", "Missing", "Wrong_word"];
@@ -82,7 +93,7 @@ var highlights = ["[]"];
 function grade(correct_answer, student_answer){
   //Condition 1: Exact Match - Correct
   if (correct_answer == student_answer) {
-  return (correct[0], blame[0], highlights[0]);
+  return document.getElementById(correct[0], blame[0], highlights[0]);
   //Condition 2: Exact Match but with Punctuation - Correct
   } else if (correct_answer + "." || "!" || "?" == student_answer + "." || "!" || "?"){
   return (correct[0], blame[0], highlights[0]);
@@ -91,17 +102,19 @@ function grade(correct_answer, student_answer){
   return (correct[0], blame[0], highlights[0]);
 
   //Condition 4: Near Match because of Repeated Letter at any point in the sentence - Typo
-  } else if student_answer correct_answer  {
-  return (correct[0], blame[1], highlights[X]);
+  } else if ( correct_answer.split(" ").search !== student_answer.split(" ").search(correct_answer.split(" ")).match ) {
+  ///indexOf, lastIndexOf  
+  student_answer.charAt( )
+  return (correct[0], blame[1], ( (correct_answer.charAt(' '), correct_answer.lastCharAt(' ')), (student_answer.charAt(' '),student_answer.lastCharAt(' ') );
 
   //Condition 5: No Match because of omitted letter - False
-} else if (correct_answer.split(" ") != student_answer.split(" ")) ){
+  } else if (correct_answer.split(" ") != student_answer.split(" ")) {
   return (correct[1], blame[2], highlights[X];
   //Condition 6: No Match because of wrong word - False
   } else if student_answer correct_answer  {
   return (correct[1], blame[1], highlights[X]);
   //Condition 7: No Match because of omitted word - False
-} else if (correct_answer.split(" ").length != student_answer.split(" ").length)  {
+  } else if (correct_answer.split(" ").length != student_answer.split(" ").length)  {
   return (correct[1], blame[0], highlights[0]);
   }
 };
